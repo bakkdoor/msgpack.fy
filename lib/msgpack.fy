@@ -19,8 +19,7 @@ class MessagePack RPC Client {
       @client call_async_apply(m, p)
     }
     def send_async: m with_params: p {
-      @client call_async_apply(m, p)
-      nil
+      @client notify_apply(m, p)
     }
     def unknown_message: m with_params: p {
       @client call_apply(m, p)

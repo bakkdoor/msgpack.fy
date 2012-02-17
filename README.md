@@ -1,6 +1,7 @@
-# Simple Fancy wrapper for MessagePack serialization and rpc library.
+# msgpack.fy
+##  Simple Fancy wrapper for MessagePack serialization and rpc library.
 
-## Sample server:
+### Sample server:
 
 ```fancy
 require: "msgpack.fy"
@@ -17,7 +18,7 @@ MessagePack RPC Server new tap: @{
 }
 ```
 
-## Sample client:
+### Sample client:
 
 ```fancy
 client = MessagePack RPC Client new: "127.0.0.1" port: 1234
@@ -30,7 +31,7 @@ future value                    # => 3
 client @@ add: 1 to: 2          # => nil (not useful if you want a return value like in this example)
 ```
 
-## Copyright
+### Copyright
 
 (C) 2012 Christopher Bertels chris@fancy-lang.org
 

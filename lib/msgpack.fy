@@ -48,5 +48,9 @@ class MessagePack RPC Future {
     attach_callback(&block)
   }
 
-  alias_method: 'with_value: for: 'when_done:
+  def with_value: block {
+    when_done: |f| {
+      block call: [f value]
+    }
+  }
 }

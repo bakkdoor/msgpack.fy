@@ -1,4 +1,4 @@
-Fancy Package Specification new: "msgpack" with: {
+Fancy Package Specification new: "msgpack.fy" with: {
   author: "Christopher Bertels"
   email: "chris@fancy-lang.org"
   include_files: ["lib/msgpack.fy"]

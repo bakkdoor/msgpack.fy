@@ -13,7 +13,7 @@ class MessagePack RPC Server {
 }
 
 class MessagePack RPC Client {
-  class ClientProxy : BasicObject {
+  class ClientProxy : Fancy BasicObject {
     def initialize: @client
     def send_future: m with_params: p {
       @client call_async_apply(m, p)

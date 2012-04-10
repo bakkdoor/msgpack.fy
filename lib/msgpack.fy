@@ -16,13 +16,22 @@ class MessagePack RPC Client {
   class ClientProxy : Fancy BasicObject {
     def initialize: @client
     def send_future: m with_params: p {
-      @client call_async_apply(m, p)
+      match p size {
+        case 0 -> @client call_async_apply(m to_s[[1,-1]], p)
+        case _ -> @client call_async_apply(m to_s, p)
+      }
     }
     def send_async: m with_params: p {
-      @client notify_apply(m, p)
+      match p size {
+        case 0 -> @client notify_apply(m to_s[[1,-1]], p)
+        case _ -> @client notify_apply(m, p)
+      }
     }
     def unknown_message: m with_params: p {
-      @client call_apply(m, p)
+      match p size {
+        case 0 -> @client call_apply(m to_s[[1,-1]], p)
+        case _ -> @client call_apply(m to_s, p)
+      }
     }
   }
 

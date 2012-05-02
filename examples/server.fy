@@ -8,6 +8,10 @@ class MyHandler {
   def print_this: str {
     "Got: #{str inspect}" println
   }
+
+  def print_foo {
+    "print foo!" println
+  }
 }
 
 server = MessagePack RPC Server new

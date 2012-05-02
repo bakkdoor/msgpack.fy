@@ -20,3 +20,5 @@ futures = (0..10) map: |i| {
 
 # prints: [0, 2, 6, 12, 20, 30, 42, 56, 72, 90, 110]
 futures map: @{ value } . inspect println
+
+client print_foo

@@ -10,6 +10,14 @@ MessagePack metaclass tap: @{
 class MessagePack RPC Server {
   forwards_unary_ruby_methods
   alias_method: 'listen:port:handler: for_ruby: 'listen
+  alias_method('dispatch_method_old, 'dispatch_method)
+
+  define_method('dispatch_method) |method, param, responder| {
+    match param size {
+      case 0 -> dispatch_method_old(":#{method}", param, responder)
+      case _ -> dispatch_method_old(method, param, responder)
+    }
+  }
 }
 
 class MessagePack RPC Client {
